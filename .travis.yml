@@ -1,12 +1,16 @@
+sudo: false
 language: cpp
 git:
   submodules: false
 branches:
   only:
     - release
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install gfortran gfortran-multilib 
+addons:
+    apt:
+        packages:
+            - cmake
+            - gfortran
+            - gfortran-multilib
 install: true
 before_script:
   - FC=gfortran
