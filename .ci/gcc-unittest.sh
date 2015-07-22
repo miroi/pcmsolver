@@ -1,6 +1,6 @@
 . "$CI_SCRIPTS/common.sh"
 
-sudo pip install cpp-coveralls
+pip install cpp-coveralls --user `whoami`
 
 python setup --cxx=g++ --cc=gcc --fc=gfortran --type=debug --tests --coverage
 cd build
