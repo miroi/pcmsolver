@@ -59,14 +59,17 @@ build_script:
 - set path=%path%;C:\software\zlib
 
 # download and unpack OpenBLAS library
-- ps: wget $env:http://skylink.dl.sourceforge.net/project/openblas/v0.2.14/OpenBLAS-v0.2.14-Win64-int32.zip -OutFile OpenBLAS-v0.2.14-Win64-int32.zip 
+- ps: wget http://skylink.dl.sourceforge.net/project/openblas/v0.2.14/OpenBLAS-v0.2.14-Win64-int32.zip -OutFile OpenBLAS-v0.2.14-Win64-int32.zip 
 - 7z x OpenBLAS-v0.2.14-Win64-int32.zip > NUL
+- dir
+- dir C:\software\OpenBLAS-v0.2.14-Win64-int32
+- dir C:\software\OpenBLAS-v0.2.14-Win64-int32\bin
 
 # add OpenBLAS .dll dir to path
 - set path=%path%;C:\software\OpenBLAS-v0.2.14-Win64-int32\bin
 
 # download and upgrade pip
-- ps: wget $env:https://bootstrap.pypa.io/get-pip.py -OutFile get-pip.py
+- ps: wget https://bootstrap.pypa.io/get-pip.py -OutFile get-pip.py
 - python get-pip.py
 
 # go back to project source dir
