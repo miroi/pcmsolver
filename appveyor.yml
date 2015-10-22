@@ -40,12 +40,18 @@ build_script:
 # create dir for custom software and move there
 - mkdir C:\software && cd C:\software
 
-# download and unpack MinGw-w64 compilers
+# download and unpack MinGW-w64 compilers
 - ps: wget $env:url -OutFile MinGW.7z
 - 7z x MinGW.7z > NUL
 
 # add compilers binary dir to path
 - set path=%path%;C:\software\mingw64\bin
+
+# download and unpack the ZLIB library
+- ps: wget http://sourceforge.net/projects/mingw-w64/files/External%20binary%20packages%20%28Win64%20hosted%29/Binaries%20%2864-bit%29/zlib-1.2.5-bin-x64.zip/download
+- 7z x zlib-1.2.5-bin-x64.zip  > NUL
+# add library to path
+- set path=%path%;C:\software\zlib
 
 # download and unpack OpenBLAS library
 - ps: wget http://skylink.dl.sourceforge.net/project/openblas/v0.2.14/OpenBLAS-v0.2.14-Win64-int32.zip -OutFile OpenBLAS-v0.2.14-Win64-int32.zip
