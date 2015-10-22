@@ -64,6 +64,6 @@ build_script:
 test_script:
 # show environment
 - echo %path%
-- python setup --generator="MinGW Makefiles" 
+- python setup.py --generator="MinGW Makefiles" 
 - cd build
 - mingw32-make VERBOSE=1
