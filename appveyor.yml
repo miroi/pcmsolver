@@ -67,11 +67,14 @@ build_script:
 - cd boost_1_59_0
 - dir
 - bootstrap.bat mingw
-- b2 --prefix="C:\software" --with-system --with-filesystem --with-test --with-chrono --with-timer toolset=gcc install
+- b2 --prefix="C:\software\Boost" --with-system --with-filesystem --with-test --with-chrono --with-timer toolset=gcc install
 - dir
 - cd ..
 - pwd
 - dir
+- dir Boost
+- dir Boost\include
+- dir Boost\lib
 - set path=%path%;C:\software\Boost
 
 
