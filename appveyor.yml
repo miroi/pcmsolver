@@ -47,7 +47,9 @@ build_script:
 # add compilers binary dir to the path
 - set path=%path%;C:\software\mingw64\bin
 
-# download and unpack the ZLIB library
+# ######################################
+#  download and unpack the ZLIB library
+# ######################################
 #- ps: wget http://downloads.sourceforge.net/project/mingw-w64/External%20binary%20packages%20%28Win64%20hosted%29/Binaries%20%2864-bit%29/zlib-1.2.5-bin-x64.zip -OutFile zlib-1.2.5-bin-x64.zip
 - ps: wget http://web-docs.gsi.de/~milias/zlib/zlib-1.2.5-bin-x64.zip -OutFile zlib-1.2.5-bin-x64.zip
 - dir
@@ -61,7 +63,8 @@ build_script:
 # ######################################
 # download and unpack the Boost library
 # ######################################
-- ps: wget http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.zip
+#- ps: wget http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.zip -OutFile boost_1_59_0.zip
+- ps: wget http://web-docs.gsi.de/~milias/boost/boost_1_59_0.zip -OutFile boost_1_59_0.zip
 - dir 
 - 7z x boost_1_59_0.zip
 - cd boost_1_59_0
