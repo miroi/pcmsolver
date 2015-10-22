@@ -30,7 +30,7 @@ if(DOXYGEN_FOUND)
 else(DOXYGEN_FOUND)
     message(STATUS "Doxygen missing. Cannot build docs")
 endif(DOXYGEN_FOUND)
-
+set(BUILD_CHARTS OFF)
 # Updates bar charts for given directory of source files
 # _src_dir is the source directory
 # _lang is the language: CXX, C or Fortran
