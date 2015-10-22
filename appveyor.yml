@@ -48,7 +48,7 @@ build_script:
 - set path=%path%;C:\software\mingw64\bin
 
 # download and unpack the ZLIB library
-- ps: wget http://downloads.sourceforge.net/project/mingw-w64/External%20binary%20packages%20%28Win64%20hosted%29/Binaries%20%2864-bit%29/zlib-1.2.5-bin-x64.zip?r=&ts=1445510500&use_mirror=heanet  -OutFile zlib-1.2.5-bin-x64.zip
+- ps: wget http://downloads.sourceforge.net/project/mingw-w64/External%20binary%20packages%20%28Win64%20hosted%29/Binaries%20%2864-bit%29/zlib-1.2.5-bin-x64.zip -OutFile zlib-1.2.5-bin-x64.zip
 - 7z x zlib-1.2.5-bin-x64.zip  > NUL
 # add library to the path
 - set path=%path%;C:\software\zlib
