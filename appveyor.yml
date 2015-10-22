@@ -66,14 +66,13 @@ build_script:
 #- ps: wget http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.zip -OutFile boost_1_59_0.zip
 - ps: wget http://web-docs.gsi.de/~milias/boost/boost_1_59_0.zip -OutFile boost_1_59_0.zip
 - dir 
-- 7z x boost_1_59_0.zip
+- 7z x boost_1_59_0.zip > NUL
 - cd boost_1_59_0
 - dir
 - bootstrap.bat mingw
 - b2 --prefix="C:\software\Boost" --with-system --with-filesystem --with-test --with-chrono --with-timer toolset=gcc install
 - dir
 - cd ..
-- pwd
 - dir
 - dir Boost
 - dir Boost\include
