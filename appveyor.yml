@@ -58,6 +58,23 @@ build_script:
 # add library to the path
 - set path=%path%;C:\software\zlib
 
+# ######################################
+# download and unpack the Boost library
+# ######################################
+- ps: wget http://downloads.sourceforge.net/project/boost/boost/1.59.0/boost_1_59_0.zip
+- dir 
+- 7z x boost_1_59_0.zip
+- cd boost_1_59_0
+- dir
+- bootstrap.bat mingw
+- b2 --prefix="C:\software" --with-system --with-filesystem --with-test --with-chrono --with-timer toolset=gcc install
+- dir
+- cd ..
+- pwd
+- dir
+- set path=%path%;C:\software\Boost
+
+
 # download and unpack OpenBLAS library
 - ps: wget http://skylink.dl.sourceforge.net/project/openblas/v0.2.14/OpenBLAS-v0.2.14-Win64-int32.zip -OutFile OpenBLAS-v0.2.14-Win64-int32.zip 
 - 7z x OpenBLAS-v0.2.14-Win64-int32.zip > NUL
