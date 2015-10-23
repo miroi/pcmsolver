@@ -78,8 +78,6 @@ build_script:
 - dir Boost\include
 - dir Boost\lib
 - set path=%path%;C:\software\Boost
-- set path=%path%;C:\software\Boost\lib
-- set path=%path%;C:\software\Boost\include
 
 
 # download and unpack OpenBLAS library
@@ -102,6 +100,7 @@ build_script:
 test_script:
 # show environment
 - echo %path%
-- python setup.py --generator="MinGW Makefiles" 
+# miro: pcmsolver does not detect Boost through %path%, setup must be told explicitly
+- python setup.py --generator="MinGW Makefiles"  --boost-headers="C:\software\Boost\include"  --boost-libraries="C:\software\Boost\lib"
 - cd build
 - mingw32-make VERBOSE=1 Experimental
