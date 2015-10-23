@@ -77,7 +77,9 @@ build_script:
 - dir Boost
 - dir Boost\include
 - dir Boost\lib
-- set path=%path%;C:\software\Boost;C:\software\Boost\lib;C:\software\Boost\include
+- set path=%path%;C:\software\Boost
+- set path=%path%;C:\software\Boost\lib
+- set path=%path%;C:\software\Boost\include
 
 
 # download and unpack OpenBLAS library
